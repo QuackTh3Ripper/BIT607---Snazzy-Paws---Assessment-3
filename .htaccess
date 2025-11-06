@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Snazzy Paws Staff Only"
+AuthUserFile "/full/server/path/.htpasswd"
+Require valid-user

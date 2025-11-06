@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snazzy Paws Grooming - Booking</title>
+  <meta name="description" content="Book professional dog grooming services in Hamilton - Snazzy Paws">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+  <header class="bg-white shadow-sm sticky-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="cropped-snazzy5-1.webp" alt="Snazzy Paws Logo" class="me-3" style="height:60px;">
+            <div>
+              <h1 class="h5 mb-0" style="color:#0b6b64;">Snazzy Paws Grooming</h1>
+              <div class="small text-muted">Snazzy Paws — Professional Dog Grooming</div>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link active fw-bold" href="booking.html">Booking</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="roster.html">Roster</a></li>
+              <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="h3 mb-4 text-center" style="color:#0b6b64;">Book Your Appointment</h2>
+        
+        <!-- Progress Indicator -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <div class="progress mb-3" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: 33%;" id="progressBar"></div>
+            </div>
+            <div class="d-flex justify-content-between small text-muted">
+              <span>Personal Info</span>
+              <span>Pet Details</span>
+              <span>Confirmation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow">
+          <div class="card-body">
+            <form id="bookingForm" class="needs-validation" novalidate>
+              <!-- Owner Information -->
+              <fieldset>
+                <legend class="h5 mb-3" style="color:#0b6b64;">Owner Information</legend>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="owner" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" id="owner" name="owner" placeholder="e.g. Aroha Te Rangi" required>
+                    <div class="invalid-feedback">Please provide your full name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="(07) 123 4567" pattern="[0-9\-\+\s\(\)]{7,}" required>
+                    <div class="invalid-feedback">Please provide a valid phone number.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="preferredDate" class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="preferredDate" name="preferredDate" min="<?= date('Y-m-d'); ?>">
+                  </div>
+                </div>
+              </fieldset>
+
+              <hr class="my-4">
+
+              <!-- Pet Information -->
+              <fieldset>
+                <legend class="h5 mb-3" style="color:#0b6b64;">Pet Information</legend>
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="dogName" class="form-label">Dog's Name *</label>
+                    <input type="text" class="form-control" id="dogName" name="dogName" placeholder="e.g. Moko" required>
+                    <div class="invalid-feedback">Please provide your dog's name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="breed" class="form-label">Breed</label>
+                    <input type="text" class="form-control" id="breed" name="breed" placeholder="e.g. Border Collie">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="age" class="form-label">Age (years)</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="e.g. 3" min="0" max="30">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" class="form-control" id="weight" name="weight" placeholder="e.g. 15" min="1" max="100">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="temperament" class="form-label">Temperament</label>
+                    <select class="form-select" id="temperament" name="temperament">
+                      <option value="">Select...</option>
+                      <option value="calm">Calm</option>
+                      <option value="energetic">Energetic</option>
+                      <option value="nervous">Nervous</option>
+                      <option value="aggressive">Aggressive</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <hr class="my-4">
+
+              <!-- Service Selection -->
+              <fieldset>
+                <legend class="h5 mb-3" style="color:#0b6b64;">Service Selection</legend>
+                
+                <div class="mb-3">
+                  <label for="service" class="form-label">Select Service *</label>
+                  <select class="form-select" id="service" name="service" required>
+                    <option value="">-- Select a Service --</option>
+                    <option data-price="25-50">Bath and Brush ($25–$50)</option>
+                    <option data-price="45-85">Haircut ($45–$85)</option>
+                    <option data-price="10-20">Nail Trim ($10–$20)</option>
+                    <option data-price="10-15">Ear Cleaning ($10–$15)</option>
+                    <option data-price="10-15">Teeth Brushing ($10–$15)</option>
+                    <option data-price="20-40">De-shedding Treatment (+$20–$40)</option>
+                    <option data-price="15-30">Flea and Tick Treatment ($15–$30)</option>
+                    <option data-price="75-150">Spa Package ($75–$150)</option>
+                    <option data-price="15-25">Express Service (+$15–$25)</option>
+                    <option data-price="20-40">Medicated Bath (+$20–$40)</option>
+                    <option>Special-breed Cuts (Quoted)</option>
+                    <option data-price="30-60">Puppy Package ($30–$60)</option>
+                    <option data-price="40-80">Senior Dog Package ($40–$80)</option>
+                    <option data-price="60-120">Full Grooming Package ($60–$120)</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a service.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Special Requirements</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="specialHandling" name="specialHandling">
+                    <label class="form-check-label" for="specialHandling">Requires special handling</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="allergies" name="allergies">
+                    <label class="form-check-label" for="allergies">Has allergies</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="medication" name="medication">
+                    <label class="form-check-label" for="medication">On medication</label>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="notes" class="form-label">Additional Notes</label>
+                  <textarea class="form-control" id="notes" name="notes" rows="3" placeholder="Any special instructions or concerns..."></textarea>
+                </div>
+              </fieldset>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn cta-btn btn-lg" id="submitBtn">
+                  Submit Booking Request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Booking Tips -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Booking Tips</h5>
+            <ul class="list-unstyled">
+              <li>✅ Book at least 3 days in advance for best availability</li>
+              <li>✅ Bring vaccination records for first-time visits</li>
+              <li>✅ Allow 1-3 hours depending on service selected</li>
+              <li>✅ Call us for urgent same-day appointments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="btn book-fixed position-fixed" onclick="location.href='booking.html'">Book Now</button>
+
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast" role="alert">
+      <div class="toast-header">
+        <strong class="me-auto">Booking Confirmed</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body" id="toastMessage">
+        Your booking request has been received successfully.
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div>Snazzy Paws Grooming — Open Mon–Sat 9am–5pm</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div>© 2025 Snazzy Paws</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Form validation and enhanced booking functionality
+  (function() {
+    'use strict';
+    
+    const form = document.getElementById('bookingForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.getElementById('progressBar');
+    
+    // Update progress bar
+    function updateProgress() {
+      const fields = form.querySelectorAll('input[required], select[required]');
+      const filled = Array.from(fields).filter(field => field.value.trim() !== '').length;
+      const progress = (filled / fields.length) * 100;
+      progressBar.style.width = Math.min(progress, 100) + '%';
+    }
+    
+    // Add progress tracking
+    form.addEventListener('input', updateProgress);
+    
+    // Enhanced form submission
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      if (!form.checkValidity()) {
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+      
+      // Show loading state
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Processing...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        // Show success toast
+        const toast = new bootstrap.Toast(document.getElementById('successToast'));
+        document.getElementById('toastMessage').textContent = 'Thank you! Your booking request has been received. We will contact you within 24 hours to confirm.';
+        toast.show();
+        
+        // Reset form
+        form.reset();
+        form.classList.remove('was-validated');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        progressBar.style.width = '33%';
+        
+        // You would typically send data to server here
+        console.log('Form data:', new FormData(form));
+      }, 2000);
+    }, false);
+    
+    // Price display for selected service
+    document.getElementById('service').addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex];
+      const price = selectedOption.getAttribute('data-price');
+      if (price) {
+        // Could display price somewhere on the page
+        console.log('Selected service price:', price);
+      }
+    });
+    
+    // Initialize progress
+    updateProgress();
+    
+  })();
+
+  // Accessibility
+  document.querySelectorAll('a').forEach(a => 
+    a.addEventListener('focus', () => a.style.outline = '3px solid #ffeaa7')
+  );
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* Refreshed style - Bootstrap compatible */
+:root{
+  --teal:#2aa19a;
+  --teal-dark:#1f7f79;
+  --gold:#d9b66a;
+  --white:#ffffff;
+  --bg:#fbfbfb;
+  --black:#111316;
+  --muted:#556;
+  --max-width:1100px;
+  --radius:10px;
+  --shadow: 0 8px 24px rgba(17,19,22,0.06);
+}
+
+*{box-sizing:border-box}
+html{font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;color:var(--black);background-color:var(--bg);-webkit-font-smoothing:antialiased;}
+body{margin:0;line-height:1.6}
+
+/* Bootstrap compatibility */
+.cta-btn {
+  background-color: var(--teal-dark) !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--teal) !important;
+  transform: translateY(-2px);
+}
+
+.book-fixed {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--teal) !important;
+  color: var(--white) !important;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  border: none;
+  box-shadow: 0 12px 32px rgba(17,19,22,0.12);
+  cursor: pointer;
+  font-weight: 700;
+  z-index: 1030;
+  transition: all 0.2s ease;
+}
+
+.book-fixed:hover {
+  background: var(--teal-dark) !important;
+  transform: translateY(-3px);
+}
+
+/* Custom card enhancements */
+.card {
+  border: 1px solid rgba(17,19,22,0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(17,19,22,0.08) !important;
+}
+
+/* Navbar customization */
+.navbar-nav .nav-link {
+  color: var(--muted) !important;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 0 0.1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  background: rgba(42,161,154,0.08);
+  color: var(--teal-dark) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--teal-dark) !important;
+  font-weight: bold;
+}
+
+/* Form enhancements */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--teal-dark);
+  box-shadow: 0 0 0 0.2rem rgba(42,161,154,0.25);
+}
+
+/* Footer customization */
+footer.bg-light {
+  background-color: rgba(42,161,154,0.03) !important;
+  border-top: 1px solid rgba(17,19,22,0.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-fixed {
+    bottom: 80px;
+    right: 15px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--teal-dark);
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}

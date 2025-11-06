@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snazzy Paws Grooming - Services</title>
+  <meta name="description" content="Professional dog grooming services in Hamilton - Snazzy Paws">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+  <header class="bg-white shadow-sm sticky-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="cropped-snazzy5-1.webp" alt="Snazzy Paws Logo" class="me-3" style="height:60px;">
+            <div>
+              <h1 class="h5 mb-0" style="color:#0b6b64;">Snazzy Paws Grooming</h1>
+              <div class="small text-muted">Snazzy Paws — Professional Dog Grooming</div>
+            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active fw-bold" href="services.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+              <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="roster.html">Roster</a></li>
+              <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <h1 class="h2 mb-4 text-center" style="color:#0b6b64;">Our Professional Grooming Services</h1>
+    
+    <!-- Service Tabs -->
+    <ul class="nav nav-tabs mb-4" id="servicesTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button" role="tab">Basic Services</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="premium-tab" data-bs-toggle="tab" data-bs-target="#premium" type="button" role="tab">Premium Packages</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab">Special Treatments</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="servicesTabContent">
+      <!-- Basic Services Tab -->
+      <div class="tab-pane fade show active" id="basic" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">🛁</div>
+                <h3 class="h5 card-title">Bath and Brush</h3>
+                <p class="card-text">Includes shampoo, blow-dry, brush-out, and nail trim.</p>
+                <p class="price fw-bold text-success h5">$25–$50</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">✂️</div>
+                <h3 class="h5 card-title">Haircut</h3>
+                <p class="card-text">Bath, blow-dry, haircut based on breed standard, and nail trim.</p>
+                <p class="price fw-bold text-success h5">$45–$85</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">💅</div>
+                <h3 class="h5 card-title">Nail Trim</h3>
+                <p class="card-text">Professional nail trimming and filing for comfort and health.</p>
+                <p class="price fw-bold text-success h5">$10–$20</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Packages Tab -->
+      <div class="tab-pane fade" id="premium" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">⭐</div>
+                <h3 class="h5 card-title">Spa Package</h3>
+                <p class="card-text">Bath, haircut, teeth brushing, nail trim, and special conditioners.</p>
+                <p class="price fw-bold text-success h5">$75–$150</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">🐕</div>
+                <h3 class="h5 card-title">Puppy Package</h3>
+                <p class="card-text">Introductory grooming services tailored for puppies.</p>
+                <p class="price fw-bold text-success h5">$30–$60</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">👴</div>
+                <h3 class="h5 card-title">Senior Dog Package</h3>
+                <p class="card-text">Grooming services tailored for older dogs with special care.</p>
+                <p class="price fw-bold text-success h5">$40–$80</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Treatments Tab -->
+      <div class="tab-pane fade" id="special" role="tabpanel">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">🧴</div>
+                <h3 class="h5 card-title">Medicated Bath</h3>
+                <p class="card-text">Special shampoo treatment for pets with skin conditions.</p>
+                <p class="price fw-bold text-success h5">+$20–$40</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">🐛</div>
+                <h3 class="h5 card-title">Flea & Tick Treatment</h3>
+                <p class="card-text">Shampoo and preventative treatment for parasite control.</p>
+                <p class="price fw-bold text-success h5">$15–$30</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm service-card">
+              <div class="card-body text-center">
+                <div class="h1 text-primary">⚡</div>
+                <h3 class="h5 card-title">Express Service</h3>
+                <p class="card-text">Priority service for dogs needing minimal grooming or quick touch-up.</p>
+                <p class="price fw-bold text-success h5">+$15–$25</p>
+                <button class="btn cta-btn btn-sm" onclick="location.href='booking.html'">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Comparison Table -->
+    <div class="card border-0 shadow mt-5">
+      <div class="card-body">
+        <h3 class="h4 mb-4 text-center" style="color:#0b6b64;">Service Comparison</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Service</th>
+                <th>Duration</th>
+                <th>Price Range</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bath & Brush</td>
+                <td>30-45 min</td>
+                <td>$25-$50</td>
+                <td>Regular maintenance</td>
+              </tr>
+              <tr>
+                <td>Full Grooming</td>
+                <td>60-90 min</td>
+                <td>$60-$120</td>
+                <td>Complete makeover</td>
+              </tr>
+              <tr>
+                <td>Spa Package</td>
+                <td>90-120 min</td>
+                <td>$75-$150</td>
+                <td>Special occasions</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="btn book-fixed position-fixed" onclick="location.href='booking.html'">Book Now</button>
+
+  <footer class="bg-light py-4 mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div>Snazzy Paws Grooming — Open Mon–Sat 9am–5pm</div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div>© 2025 Snazzy Paws</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.querySelectorAll('a').forEach(a => 
+    a.addEventListener('focus', () => a.style.outline = '3px solid #ffeaa7')
+  );
+  </script>
+</body>
+</html>
