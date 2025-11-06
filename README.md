@@ -33,6 +33,8 @@ Deployment Notes
 - SSL certificate recommended for production
 - CDN implementation for optimal performance
 
+The login to edit the staff roster is Snazzy123 
+
 All Staff Usernames and Passwords have been tested are as follows: 
 
 Jamie  : Snazzypaws123!
