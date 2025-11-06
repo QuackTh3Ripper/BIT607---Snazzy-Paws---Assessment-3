@@ -36,8 +36,13 @@ Deployment Notes
 All Staff Usernames and Passwords have been tested are as follows: 
 
 Jamie  : Snazzypaws123!
+
 Alex   : Snazzypaws1234
+
 Casey  : Snazzypaws123#
+
 Riley  : Snazzypaws123?
+
 Taylor : Snazzypaws123$
+
 Jordan : Snazzypaws123%
