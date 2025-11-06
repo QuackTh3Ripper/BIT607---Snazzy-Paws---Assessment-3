@@ -1,0 +1,2 @@
+# Never upload password files or system configs
+.htpasswd
