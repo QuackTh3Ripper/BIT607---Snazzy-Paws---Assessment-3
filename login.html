@@ -37,8 +37,6 @@
 </style>
 </head>
 <body>
-  
-<!-- Keep existing header/footer by including same structure as site -->
 
 <div id="sp-modal-root" class="sp-modal-backdrop" role="dialog" aria-modal="true">
   <div class="sp-modal" role="document">
@@ -52,8 +50,7 @@
       <label for="sp-password">Password</label>
       <input id="sp-password" type="password" autocomplete="current-password" />
     </div>
-    <div class="sp-error" id="sp-error">Invalid username or password.</div>
-    
+    <div class="sp-error" id="sp-error">Please enter your login credentials.</div>
     <div class="sp-actions">
       <button class="sp-btn" id="sp-cancel">Cancel</button>
       <button class="sp-btn primary" id="sp-submit">Sign in</button>
@@ -63,67 +60,45 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  
-// Simple client-side credential store
-  
-const CREDENTIALS = {
-  "Jamie":"Snazzypaws123!",
-  "Alex":"Snazzypaws1234",
-  "Casey":"Snazzypaws123#",
-  "Riley":"Snazzypaws123?",
-  "Taylor":"Snazzypaws123$",
-  "Jordan":"Snazzypaws123%"
-};
-
 function showError(msg) {
   const el = document.getElementById('sp-error');
-  el.textContent = msg || 'Invalid username or password.';
+  el.textContent = msg || 'Please enter your login credentials.';
   el.style.display = 'block';
 }
 
-document.getElementById('sp-cancel').addEventListener('click', function(){
+// Cancel button 
   
-  // go back
-  
-  history.back();
-});
-
-document.getElementById('sp-submit').addEventListener('click', function(){
-  const u = document.getElementById('sp-username').value.trim();
-  const p = document.getElementById('sp-password').value;
-  if(!u || !p) { showError('Please enter username and password.'); return; }
-  
-  // Validate
-  
-  if(CREDENTIALS[u] && CREDENTIALS[u] === p) {
-    
-    // success
-    
-    try {
-      sessionStorage.setItem('sp_logged_in','true');
-      sessionStorage.setItem('sp_user', u);
-    } catch(e){ console.warn(e); }
-    
-    // redirect back to attempted page or roster
-    
-    const target = sessionStorage.getItem('sp_after_login') || 'roster.html';
-    
-    // clear stored after
-    
-    sessionStorage.removeItem('sp_after_login');
-    window.location.replace(target);
+document.getElementById("sp-cancel").addEventListener("click", function() {
+  if (window.history.length > 1) {
+    history.back();
   } else {
-    showError();
+    window.location.href = "index.html";
   }
 });
 
-// allow Enter key
+// ✅ Submit button — redirect to roster (trigger .htaccess)
   
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Enter') {
-    document.getElementById('sp-submit').click();
+document.getElementById("sp-submit").addEventListener("click", function(e) {
+  e.preventDefault();
+  const u = document.getElementById("sp-username").value.trim();
+  const p = document.getElementById("sp-password").value.trim();
+  if (!u || !p) {
+    showError("Please enter your username and password.");
+    return;
+  }
+  // Redirect to roster to trigger Basic Auth
+  
+  window.location.href = "roster.html";
+});
+
+// Enter key support
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("sp-submit").click();
   }
 });
 </script>
 </body>
 </html>
+
