@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Snazzy Paws Grooming - Booking</title>
   <meta name="description" content="Book professional dog grooming services in Hamilton - Snazzy Paws">
+  
   <!-- Bootstrap CSS -->
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.min.css">
@@ -25,6 +27,9 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+           <!-- Navigation -->
+          
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -47,6 +52,7 @@
         <h2 class="h3 mb-4 text-center" style="color:#0b6b64;">Book Your Appointment</h2>
         
         <!-- Progress Indicator -->
+        
         <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
             <div class="progress mb-3" style="height: 8px;">
@@ -63,7 +69,9 @@
         <div class="card shadow">
           <div class="card-body">
             <form id="bookingForm" class="needs-validation" novalidate>
+              
               <!-- Owner Information -->
+              
               <fieldset>
                 <legend class="h5 mb-3" style="color:#0b6b64;">Owner Information</legend>
                 
@@ -93,6 +101,7 @@
               <hr class="my-4">
 
               <!-- Pet Information -->
+              
               <fieldset>
                 <legend class="h5 mb-3" style="color:#0b6b64;">Pet Information</legend>
                 
@@ -130,6 +139,7 @@
               <hr class="my-4">
 
               <!-- Service Selection -->
+              
               <fieldset>
                 <legend class="h5 mb-3" style="color:#0b6b64;">Service Selection</legend>
                 
@@ -178,6 +188,7 @@
               </fieldset>
 
               <!-- Submit Button -->
+              
               <div class="d-grid">
                 <button type="submit" class="btn cta-btn btn-lg" id="submitBtn">
                   Submit Booking Request
@@ -188,6 +199,7 @@
         </div>
 
         <!-- Booking Tips -->
+        
         <div class="card border-0 shadow-sm mt-4">
           <div class="card-body">
             <h5 class="card-title">Booking Tips</h5>
@@ -206,6 +218,7 @@
   <button class="btn book-fixed position-fixed" onclick="location.href='booking.html'">Book Now</button>
 
   <!-- Toast Container -->
+  
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="successToast" class="toast" role="alert">
       <div class="toast-header">
@@ -232,9 +245,12 @@
   </footer>
 
   <!-- Bootstrap JS -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    
   // Form validation and enhanced booking functionality
+    
   (function() {
     'use strict';
     
@@ -243,6 +259,7 @@
     const progressBar = document.getElementById('progressBar');
     
     // Update progress bar
+    
     function updateProgress() {
       const fields = form.querySelectorAll('input[required], select[required]');
       const filled = Array.from(fields).filter(field => field.value.trim() !== '').length;
@@ -251,9 +268,11 @@
     }
     
     // Add progress tracking
+    
     form.addEventListener('input', updateProgress);
     
     // Enhanced form submission
+    
     form.addEventListener('submit', function(event) {
       event.preventDefault();
       
@@ -264,18 +283,23 @@
       }
       
       // Show loading state
+      
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Processing...';
       submitBtn.disabled = true;
       
       // Simulate API call
+      
       setTimeout(() => {
+        
         // Show success toast
+        
         const toast = new bootstrap.Toast(document.getElementById('successToast'));
         document.getElementById('toastMessage').textContent = 'Thank you! Your booking request has been received. We will contact you within 24 hours to confirm.';
         toast.show();
         
         // Reset form
+        
         form.reset();
         form.classList.remove('was-validated');
         submitBtn.innerHTML = originalText;
@@ -283,29 +307,36 @@
         progressBar.style.width = '33%';
         
         // You would typically send data to server here
+        
         console.log('Form data:', new FormData(form));
       }, 2000);
     }, false);
     
     // Price display for selected service
+    
     document.getElementById('service').addEventListener('change', function() {
       const selectedOption = this.options[this.selectedIndex];
       const price = selectedOption.getAttribute('data-price');
       if (price) {
+        
         // Could display price somewhere on the page
+        
         console.log('Selected service price:', price);
       }
     });
     
     // Initialize progress
+    
     updateProgress();
     
   })();
 
   // Accessibility
+    
   document.querySelectorAll('a').forEach(a => 
     a.addEventListener('focus', () => a.style.outline = '3px solid #ffeaa7')
   );
   </script>
 </body>
+
 </html>
