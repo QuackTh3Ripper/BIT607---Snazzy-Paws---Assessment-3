@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Snazzy Paws Grooming - Gallery</title>
   <meta name="description" content="Gallery of professional dog grooming in Hamilton - Snazzy Paws">
+  
   <!-- Bootstrap CSS -->
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.min.css">
@@ -67,6 +69,9 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+            <!-- Header Navigation -->
+          
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -83,6 +88,8 @@
     </div>
   </header>
 
+    <!-- images and source -->
+  
   <main class="container my-4">
     <h2 class="h3 mb-4" style="color:#0b6b64;">Gallery</h2>
     
@@ -125,6 +132,8 @@
       </div>
     </div>
 
+      <!-- expand image -->
+    
     <p class="text-center mt-4 text-muted">Click any image to view full size.</p>
   </main>
 
@@ -144,9 +153,11 @@
   </footer>
 
   <!-- Lightbox -->
+  
   <div class="lightbox" id="lightbox"></div>
 
   <!-- Bootstrap JS -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
   document.querySelectorAll('a').forEach(a => 
@@ -154,6 +165,7 @@
   );
 
   // Lightbox functionality
+    
   const lightbox = document.getElementById('lightbox');
   const images = document.querySelectorAll('.gallery-img');
 
