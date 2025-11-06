@@ -3,6 +3,7 @@
 <head>
 <script>
 (function(){
+  
   // Protect roster.html: if not logged in, redirect to login.html
   try{
     var allowed = sessionStorage.getItem('sp_logged_in');
@@ -23,7 +24,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Staff Roster — Snazzy Paws Grooming</title>
   <meta name="description" content="Weekly Staff Roster - Snazzy Paws Grooming">
+  
   <!-- Bootstrap CSS -->
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.min.css">
@@ -71,7 +74,9 @@
   </header>
 
   <main class="container my-4">
+    
     <!-- Password screen -->
+    
     <div id="lockscreen" class="roster-container p-4 mb-4">
       <h2 class="h3 mb-3">Staff Roster (Locked)</h2>
       <p class="mb-3">Please enter the staff password to view the roster:</p>
@@ -86,6 +91,7 @@
     </div>
 
     <!-- Roster content -->
+    
     <div id="roster" class="roster-container p-4" style="display:none;">
       <h2 class="h3 mb-4" style="color:#0b6b64;">Weekly Staff Roster</h2>
       
@@ -131,9 +137,12 @@
   </footer>
 
   <!-- Bootstrap JS -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    
     // Unlock Roster
+    
     function unlock() {
       const pw = document.getElementById("pw").value;
       if (pw === "Snazzy123") {
@@ -146,6 +155,7 @@
     }
 
     // Keep unlocked if already entered
+    
     window.onload = function() {
       if (sessionStorage.getItem("unlocked") === "true") {
         document.getElementById("lockscreen").style.display = "none";
@@ -154,6 +164,7 @@
     }
 
     // Edit roster after password confirmation
+    
     function editRoster() {
       const pw = prompt("Enter password to edit roster:");
       if (pw === "Snazzy123") {
@@ -167,6 +178,7 @@
     }
 
     // Save changes
+    
     function saveRoster() {
       const cells = document.querySelectorAll("#rosterTable td");
       cells.forEach(td => td.contentEditable = "false");
@@ -182,7 +194,9 @@
 (function(){
   var btn = document.getElementById('sp-logout');
   if(!btn){
+    
     // create and append
+    
     btn = document.createElement('button');
     btn.id = 'sp-logout';
     btn.textContent = 'Logout';
@@ -191,7 +205,9 @@
   }
   btn.addEventListener('click', function(){
     try{ sessionStorage.removeItem('sp_logged_in'); sessionStorage.removeItem('sp_user'); }catch(e){}
+    
     // optional: also try to clear basic auth by requesting with 401? Can't reliably clear browser cached basic auth.
+    
     window.location.href = 'index.html';
   });
 })();
