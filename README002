@@ -1,0 +1,15 @@
+I noticed that when testing the assignment there was a mistake within the roster,
+after doing some trouble shooting, may not be able to the fix website but wanted to show
+that the issue has been addressed and 
+
+the current login credentials should be changed to: 
+
+if(CREDENTIALS[u] && CREDENTIALS[u] === p) {
+  sessionStorage.setItem('sp_logged_in','true');
+  sessionStorage.setItem('sp_user', u);
+  const target = sessionStorage.getItem('sp_after_login') || 'roster.html';
+  sessionStorage.removeItem('sp_after_login');
+  window.location.replace(target);
+} else {
+  showError();
+}
